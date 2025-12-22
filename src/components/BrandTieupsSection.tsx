@@ -2,13 +2,16 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
+import brandBMW from "@/assets/brand-bmw.png";
+import brandFord from "@/assets/brand-ford.png";
+import brandMercedes from "@/assets/brand-mercedes.png";
+import brandSkoda from "@/assets/brand-skoda.png";
+
 const brands = [
-  { name: "Grand Palace", initials: "GP" },
-  { name: "Royal Banquets", initials: "RB" },
-  { name: "Celebrations Hall", initials: "CH" },
-  { name: "Majestic Venue", initials: "MV" },
-  { name: "Dream Events", initials: "DE" },
-  { name: "Elite Gardens", initials: "EG" },
+  { name: "BMW", logo: brandBMW },
+  { name: "Ford", logo: brandFord },
+  { name: "Mercedes-Benz", logo: brandMercedes },
+  { name: "Škoda", logo: brandSkoda },
 ];
 
 const BrandTieupsSection = () => {
@@ -37,21 +40,23 @@ const BrandTieupsSection = () => {
         </motion.div>
 
         {/* Brand Logos */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {brands.map((brand, index) => (
             <motion.div
               key={brand.name}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.08 }}
               className="group"
             >
-              <div className="aspect-square rounded-2xl bg-card border border-border/50 shadow-soft flex flex-col items-center justify-center p-4 hover:shadow-soft-lg hover:border-peach/30 transition-all duration-300">
-                <div className="w-16 h-16 rounded-full gradient-peach flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                  <span className="font-display text-xl font-bold text-foreground">{brand.initials}</span>
-                </div>
-                <span className="text-sm font-medium text-muted-foreground text-center group-hover:text-foreground transition-colors duration-300">
+              <div className="aspect-square rounded-2xl bg-card border border-border/50 shadow-soft flex flex-col items-center justify-center p-6 hover:shadow-soft-lg hover:border-peach/30 transition-all duration-300">
+                <img 
+                  src={brand.logo} 
+                  alt={brand.name} 
+                  className="w-20 h-20 object-contain group-hover:scale-110 transition-transform duration-300"
+                />
+                <span className="text-sm font-medium text-muted-foreground text-center mt-3 group-hover:text-foreground transition-colors duration-300">
                   {brand.name}
                 </span>
               </div>
