@@ -1,44 +1,45 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Sparkles, TentTree, Castle, Frame, Flame, Palette } from "lucide-react";
+
+// Import images
+import balloonImg from "@/assets/balloon-decoration.jpg";
+import canopyImg from "@/assets/canopy-tent.jpg";
+import pagodaImg from "@/assets/pagoda-tent.jpg";
+import stageImg from "@/assets/stage-framing.jpg";
+import pyroImg from "@/assets/cold-pyro.jpg";
+import themeImg from "@/assets/theme-installation.jpg";
 
 const services = [
   {
-    icon: Sparkles,
     title: "Balloon Decoration",
     description: "Stunning balloon arches, garlands, and custom installations for every celebration.",
-    color: "from-peach to-peach-dark",
+    image: balloonImg,
   },
   {
-    icon: TentTree,
     title: "Canopy Tents",
     description: "Elegant outdoor coverage with premium canopy tent setups for any venue.",
-    color: "from-blush to-blush-dark",
+    image: canopyImg,
   },
   {
-    icon: Castle,
     title: "Pagoda Tents",
     description: "Majestic pagoda structures that add grandeur to your special occasions.",
-    color: "from-gold-light to-gold",
+    image: pagodaImg,
   },
   {
-    icon: Frame,
     title: "Stage & Framing",
     description: "Professional stage setups with beautiful framing and backdrop designs.",
-    color: "from-peach-dark to-gold",
+    image: stageImg,
   },
   {
-    icon: Flame,
     title: "Cold Pyro & SFX",
     description: "Mesmerizing cold pyro effects and special effects for magical moments.",
-    color: "from-blush-dark to-peach",
+    image: pyroImg,
   },
   {
-    icon: Palette,
     title: "Theme Installations",
     description: "Custom themed décor installations tailored to your unique vision.",
-    color: "from-gold to-peach-dark",
+    image: themeImg,
   },
 ];
 
@@ -52,35 +53,35 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-      whileHover={{ y: -10, scale: 1.02 }}
+      whileHover={{ y: -10 }}
       className="group cursor-pointer"
     >
-      <div className="relative h-full bg-card rounded-3xl p-8 shadow-soft hover:shadow-soft-lg transition-all duration-500 border border-border/50 overflow-hidden">
-        {/* Background Gradient on Hover */}
-        <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
-        
-        {/* Icon */}
-        <motion.div
-          whileHover={{ rotate: [0, -10, 10, 0] }}
-          transition={{ duration: 0.5 }}
-          className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 shadow-soft group-hover:shadow-glow transition-all duration-500`}
-        >
-          <service.icon className="w-8 h-8 text-foreground" />
-        </motion.div>
+      <div className="relative h-full bg-card rounded-3xl overflow-hidden shadow-soft hover:shadow-soft-lg transition-all duration-500 border border-border/50">
+        {/* Image */}
+        <div className="relative h-56 overflow-hidden">
+          <img
+            src={service.image}
+            alt={service.title}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        </div>
 
         {/* Content */}
-        <h3 className="font-display text-xl font-semibold text-foreground mb-3 group-hover:text-gradient transition-all duration-300">
-          {service.title}
-        </h3>
-        <p className="text-muted-foreground leading-relaxed">
-          {service.description}
-        </p>
+        <div className="p-6">
+          <h3 className="font-display text-xl font-semibold text-foreground mb-3 group-hover:text-gradient transition-all duration-300">
+            {service.title}
+          </h3>
+          <p className="text-muted-foreground leading-relaxed text-sm">
+            {service.description}
+          </p>
+        </div>
 
         {/* Arrow indicator */}
         <motion.div
           initial={{ opacity: 0, x: -10 }}
           whileHover={{ opacity: 1, x: 0 }}
-          className="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-all duration-300"
+          className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-300"
         >
           <div className="w-10 h-10 rounded-full gradient-peach flex items-center justify-center">
             <svg className="w-5 h-5 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">

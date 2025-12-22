@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { name: "Services", href: "#services" },
@@ -42,9 +43,11 @@ const Navbar = () => {
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="w-12 h-12 rounded-full gradient-peach flex items-center justify-center shadow-soft">
-              <span className="font-display text-lg font-bold text-foreground">EK</span>
-            </div>
+            <img 
+              src={logo} 
+              alt="Event Krafters Logo" 
+              className="w-14 h-14 rounded-full object-cover shadow-soft"
+            />
             <div className="hidden sm:block">
               <p className="font-display text-lg font-semibold text-foreground">Event Krafters</p>
               <p className="text-xs text-muted-foreground">Rahatni Decor Studio</p>
