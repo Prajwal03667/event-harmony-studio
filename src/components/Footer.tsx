@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Facebook, Instagram, Youtube, Phone, Mail, MapPin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const quickLinks = [
   { name: "Services", href: "#services" },
@@ -40,9 +41,11 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-full gradient-peach flex items-center justify-center">
-                <span className="font-display text-lg font-bold text-foreground">EK</span>
-              </div>
+              <img 
+                src={logo} 
+                alt="Event Krafters Logo" 
+                className="w-14 h-14 rounded-full object-cover bg-background"
+              />
               <div>
                 <p className="font-display text-lg font-semibold">Event Krafters</p>
                 <p className="text-xs text-background/60">Rahatni Decor Studio</p>

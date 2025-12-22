@@ -4,22 +4,21 @@ import { useRef } from "react";
 import { Eye, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const galleryImages = [
-  { title: "Wedding Balloon Arch", category: "Wedding" },
-  { title: "Birthday Theme Setup", category: "Birthday" },
-  { title: "Corporate Stage", category: "Corporate" },
-  { title: "Engagement Décor", category: "Engagement" },
-  { title: "Pagoda Tent Setup", category: "Outdoor" },
-  { title: "Cold Pyro Moment", category: "Special Effects" },
-];
+// Import images
+import balloonImg from "@/assets/balloon-decoration.jpg";
+import canopyImg from "@/assets/canopy-tent.jpg";
+import pagodaImg from "@/assets/pagoda-tent.jpg";
+import stageImg from "@/assets/stage-framing.jpg";
+import pyroImg from "@/assets/cold-pyro.jpg";
+import themeImg from "@/assets/theme-installation.jpg";
 
-const colors = [
-  "from-peach/60 to-peach-dark/60",
-  "from-blush/60 to-blush-dark/60",
-  "from-gold-light/60 to-gold/60",
-  "from-champagne/60 to-peach/60",
-  "from-peach-dark/60 to-blush/60",
-  "from-blush-dark/60 to-gold-light/60",
+const galleryImages = [
+  { title: "Birthday Balloon Arch", category: "Birthday", image: balloonImg },
+  { title: "Canopy Setup", category: "Outdoor", image: canopyImg },
+  { title: "Pagoda Tent", category: "Wedding", image: pagodaImg },
+  { title: "Wedding Stage", category: "Wedding", image: stageImg },
+  { title: "Cold Pyro Effects", category: "Special Effects", image: pyroImg },
+  { title: "Theme Installation", category: "Corporate", image: themeImg },
 ];
 
 const GallerySection = () => {
@@ -56,33 +55,21 @@ const GallerySection = () => {
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.03 }}
-              className={`group relative aspect-square rounded-2xl lg:rounded-3xl overflow-hidden cursor-pointer shadow-soft hover:shadow-soft-lg transition-all duration-500 ${
-                index === 0 || index === 5 ? "lg:row-span-2 lg:aspect-auto" : ""
+              className={`group relative rounded-2xl lg:rounded-3xl overflow-hidden cursor-pointer shadow-soft hover:shadow-soft-lg transition-all duration-500 ${
+                index === 0 || index === 5 ? "lg:row-span-2" : ""
               }`}
             >
-              {/* Placeholder gradient background */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${colors[index]}`} />
-              
-              {/* Pattern overlay */}
-              <div className="absolute inset-0 opacity-30">
-                <div className="w-full h-full" style={{
-                  backgroundImage: `radial-gradient(circle at 25% 25%, hsl(var(--background)) 2px, transparent 2px)`,
-                  backgroundSize: '30px 30px'
-                }} />
-              </div>
-
-              {/* Content */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center p-4">
-                  <div className="w-16 h-16 mx-auto rounded-full bg-background/30 backdrop-blur-sm flex items-center justify-center mb-3">
-                    <span className="font-display text-2xl font-bold text-foreground">{image.category[0]}</span>
-                  </div>
-                  <p className="font-medium text-foreground/90 text-sm">{image.category}</p>
-                </div>
+              {/* Image */}
+              <div className={`w-full ${index === 0 || index === 5 ? "lg:h-full h-48" : "h-48 lg:h-56"}`}>
+                <img
+                  src={image.image}
+                  alt={image.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
               </div>
 
               {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-foreground/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="absolute inset-0 bg-foreground/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <div className="text-center text-background">
                   <div className="w-14 h-14 mx-auto rounded-full bg-background/20 backdrop-blur-sm flex items-center justify-center mb-3">
                     <Eye className="w-6 h-6" />

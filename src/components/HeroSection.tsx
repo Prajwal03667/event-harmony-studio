@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 const HeroSection = () => {
   return (
@@ -100,13 +101,13 @@ const HeroSection = () => {
             <motion.div
               animate={{ y: [-10, 10, -10] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full gradient-peach shadow-soft-lg flex items-center justify-center"
+              className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full bg-background shadow-soft-lg flex items-center justify-center overflow-hidden"
             >
-              <div className="w-48 h-48 sm:w-60 sm:h-60 lg:w-72 lg:h-72 rounded-full bg-background/80 backdrop-blur-sm flex flex-col items-center justify-center shadow-soft">
-                <span className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-gradient">EK</span>
-                <span className="text-sm sm:text-base text-muted-foreground mt-2">Event Krafters</span>
-                <span className="text-xs text-muted-foreground">Rahatni</span>
-              </div>
+              <img 
+                src={logo} 
+                alt="Event Krafters" 
+                className="w-full h-full object-contain p-4"
+              />
             </motion.div>
 
             {/* Floating Elements */}
