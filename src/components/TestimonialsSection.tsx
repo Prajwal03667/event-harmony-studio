@@ -37,12 +37,18 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: typeof testimoni
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.6, delay: index * 0.15 }}
+      initial={{ opacity: 0, y: 80, rotateX: 15 }}
+      animate={isInView ? { opacity: 1, y: 0, rotateX: 0 } : { opacity: 0, y: 80, rotateX: 15 }}
+      transition={{ 
+        duration: 0.8, 
+        delay: index * 0.15,
+        type: "spring",
+        stiffness: 80
+      }}
+      whileHover={{ y: -10, scale: 1.02 }}
       className="group"
     >
-      <div className="h-full bg-card rounded-3xl p-8 shadow-soft border border-border/50 hover:shadow-soft-lg hover:border-peach/30 transition-all duration-300 relative overflow-hidden">
+      <div className="h-full bg-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-soft border border-border/50 hover:shadow-soft-lg hover:border-peach/30 transition-all duration-300 relative overflow-hidden">
         {/* Quote Icon */}
         <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
           <Quote className="w-16 h-16 text-peach-dark" />
@@ -106,7 +112,7 @@ const TestimonialsSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
           {testimonials.map((testimonial, index) => (
             <TestimonialCard key={testimonial.name} testimonial={testimonial} index={index} />
           ))}

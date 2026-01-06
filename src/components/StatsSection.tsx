@@ -91,21 +91,32 @@ const StatsSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
-              initial={{ opacity: 0, y: 40 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
+              initial={{ opacity: 0, y: 60, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 60, scale: 0.9 }}
+              transition={{ 
+                duration: 0.7, 
+                delay: index * 0.15,
+                type: "spring",
+                stiffness: 100
+              }}
+              whileHover={{ y: -8, scale: 1.02 }}
               className="text-center"
             >
-              <div className="bg-card rounded-3xl p-8 shadow-soft border border-border/50 hover:shadow-soft-lg transition-all duration-300">
-                <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${stat.color} flex items-center justify-center mb-6 shadow-soft`}>
-                  <stat.icon className="w-8 h-8 text-foreground" />
-                </div>
+              <div className="bg-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-soft border border-border/50 hover:shadow-soft-lg transition-all duration-300">
+                <motion.div 
+                  initial={{ rotate: -10, scale: 0 }}
+                  animate={isInView ? { rotate: 0, scale: 1 } : { rotate: -10, scale: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.15 + 0.2, type: "spring" }}
+                  className={`w-14 h-14 sm:w-16 sm:h-16 mx-auto rounded-xl sm:rounded-2xl bg-gradient-to-br ${stat.color} flex items-center justify-center mb-4 sm:mb-6 shadow-soft`}
+                >
+                  <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 text-foreground" />
+                </motion.div>
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-                <p className="text-muted-foreground mt-2 font-medium">{stat.label}</p>
+                <p className="text-muted-foreground mt-2 font-medium text-sm sm:text-base">{stat.label}</p>
               </div>
             </motion.div>
           ))}
