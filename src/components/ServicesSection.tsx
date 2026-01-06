@@ -56,9 +56,9 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
       whileHover={{ y: -10 }}
       className="group cursor-pointer"
     >
-      <div className="relative h-full bg-card rounded-3xl overflow-hidden shadow-soft hover:shadow-soft-lg transition-all duration-500 border border-border/50">
+      <div className="relative h-full bg-card rounded-2xl sm:rounded-3xl overflow-hidden shadow-soft hover:shadow-soft-lg transition-all duration-500 border border-border/50">
         {/* Image */}
-        <div className="relative h-56 overflow-hidden">
+        <div className="relative h-40 sm:h-48 md:h-56 overflow-hidden">
           <img
             src={service.image}
             alt={service.title}
@@ -68,11 +68,11 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
         </div>
 
         {/* Content */}
-        <div className="p-6">
-          <h3 className="font-display text-xl font-semibold text-foreground mb-3 group-hover:text-gradient transition-all duration-300">
+        <div className="p-4 sm:p-6">
+          <h3 className="font-display text-lg sm:text-xl font-semibold text-foreground mb-2 sm:mb-3 group-hover:text-gradient transition-all duration-300">
             {service.title}
           </h3>
-          <p className="text-muted-foreground leading-relaxed text-sm">
+          <p className="text-muted-foreground leading-relaxed text-xs sm:text-sm">
             {service.description}
           </p>
         </div>
@@ -126,7 +126,7 @@ const ServicesSection = () => {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {services.map((service, index) => (
             <ServiceCard key={service.title} service={service} index={index} />
           ))}

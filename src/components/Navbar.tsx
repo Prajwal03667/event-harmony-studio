@@ -46,10 +46,10 @@ const Navbar = () => {
             <img 
               src={logo} 
               alt="Event Krafters Logo" 
-              className="w-14 h-14 rounded-full object-cover shadow-soft"
+              className="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover shadow-soft"
             />
             <div className="hidden sm:block">
-              <p className="font-display text-lg font-semibold text-foreground">Event Krafters</p>
+              <p className="font-display text-base sm:text-lg font-semibold text-foreground">Event Krafters</p>
               <p className="text-xs text-muted-foreground">Rahatni Decor Studio</p>
             </div>
           </motion.a>

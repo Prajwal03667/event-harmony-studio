@@ -47,7 +47,7 @@ const GallerySection = () => {
         </motion.div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 mb-8 sm:mb-12">
           {galleryImages.map((image, index) => (
             <motion.div
               key={image.title}
@@ -55,12 +55,12 @@ const GallerySection = () => {
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.03 }}
-              className={`group relative rounded-2xl lg:rounded-3xl overflow-hidden cursor-pointer shadow-soft hover:shadow-soft-lg transition-all duration-500 ${
+              className={`group relative rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden cursor-pointer shadow-soft hover:shadow-soft-lg transition-all duration-500 ${
                 index === 0 || index === 5 ? "lg:row-span-2" : ""
               }`}
             >
               {/* Image */}
-              <div className={`w-full ${index === 0 || index === 5 ? "lg:h-full h-48" : "h-48 lg:h-56"}`}>
+              <div className={`w-full ${index === 0 || index === 5 ? "lg:h-full h-36 sm:h-48" : "h-36 sm:h-48 lg:h-56"}`}>
                 <img
                   src={image.image}
                   alt={image.title}
@@ -70,12 +70,12 @@ const GallerySection = () => {
 
               {/* Hover Overlay */}
               <div className="absolute inset-0 bg-foreground/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div className="text-center text-background">
-                  <div className="w-14 h-14 mx-auto rounded-full bg-background/20 backdrop-blur-sm flex items-center justify-center mb-3">
-                    <Eye className="w-6 h-6" />
+                <div className="text-center text-background p-2">
+                  <div className="w-10 h-10 sm:w-14 sm:h-14 mx-auto rounded-full bg-background/20 backdrop-blur-sm flex items-center justify-center mb-2 sm:mb-3">
+                    <Eye className="w-4 h-4 sm:w-6 sm:h-6" />
                   </div>
-                  <p className="font-display text-lg font-semibold">{image.title}</p>
-                  <p className="text-sm opacity-80">{image.category}</p>
+                  <p className="font-display text-sm sm:text-lg font-semibold">{image.title}</p>
+                  <p className="text-xs sm:text-sm opacity-80">{image.category}</p>
                 </div>
               </div>
             </motion.div>
