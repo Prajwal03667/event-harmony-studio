@@ -40,7 +40,7 @@ const BrandTieupsSection = () => {
         </motion.div>
 
         {/* Brand Logos */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 max-w-4xl mx-auto">
           {brands.map((brand, index) => (
             <motion.div
               key={brand.name}
@@ -50,13 +50,13 @@ const BrandTieupsSection = () => {
               whileHover={{ scale: 1.08 }}
               className="group"
             >
-              <div className="aspect-square rounded-2xl bg-card border border-border/50 shadow-soft flex flex-col items-center justify-center p-6 hover:shadow-soft-lg hover:border-peach/30 transition-all duration-300">
+              <div className="aspect-square rounded-xl sm:rounded-2xl bg-card border border-border/50 shadow-soft flex flex-col items-center justify-center p-4 sm:p-6 hover:shadow-soft-lg hover:border-peach/30 transition-all duration-300">
                 <img 
                   src={brand.logo} 
                   alt={brand.name} 
-                  className="w-20 h-20 object-contain group-hover:scale-110 transition-transform duration-300"
+                  className="w-14 h-14 sm:w-20 sm:h-20 object-contain group-hover:scale-110 transition-transform duration-300"
                 />
-                <span className="text-sm font-medium text-muted-foreground text-center mt-3 group-hover:text-foreground transition-colors duration-300">
+                <span className="text-xs sm:text-sm font-medium text-muted-foreground text-center mt-2 sm:mt-3 group-hover:text-foreground transition-colors duration-300">
                   {brand.name}
                 </span>
               </div>

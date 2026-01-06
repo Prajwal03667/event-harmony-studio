@@ -5,12 +5,12 @@ import logo from "@/assets/logo.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 pb-8 sm:pb-0">
       {/* Background Elements */}
       <div className="absolute inset-0 gradient-cream" />
-      <div className="absolute top-20 left-10 w-72 h-72 bg-peach/30 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-blush/30 rounded-full blur-3xl" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold-light/10 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-5 sm:left-10 w-48 sm:w-72 h-48 sm:h-72 bg-peach/30 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-5 sm:right-10 w-64 sm:w-96 h-64 sm:h-96 bg-blush/30 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] bg-gold-light/10 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -35,7 +35,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.7 }}
-              className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6"
+              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-4 sm:mb-6"
             >
               Elegant Balloon & Event Styling{" "}
               <span className="text-gradient">Crafted For Your Celebrations</span>
@@ -45,7 +45,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.7 }}
-              className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed"
+              className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-6 sm:mb-8 leading-relaxed"
             >
               Transform your special moments with stunning balloon décor, elegant canopy tents, 
               majestic pagoda setups, professional stages, and mesmerizing cold pyro effects. 
@@ -83,30 +83,30 @@ const HeroSection = () => {
             className="relative flex items-center justify-center"
           >
             {/* Glow Effect */}
-            <div className="absolute w-80 h-80 sm:w-96 sm:h-96 lg:w-[450px] lg:h-[450px] rounded-full glow-peach opacity-60" />
+            <div className="absolute w-56 h-56 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] rounded-full glow-peach opacity-60" />
             
             {/* Decorative Rings */}
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-              className="absolute w-[350px] h-[350px] sm:w-[420px] sm:h-[420px] lg:w-[500px] lg:h-[500px] rounded-full border border-peach/20"
+              className="absolute w-[240px] h-[240px] sm:w-[350px] sm:h-[350px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] rounded-full border border-peach/20"
             />
             <motion.div
               animate={{ rotate: -360 }}
               transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
-              className="absolute w-[380px] h-[380px] sm:w-[460px] sm:h-[460px] lg:w-[550px] lg:h-[550px] rounded-full border border-blush/15"
+              className="absolute w-[270px] h-[270px] sm:w-[380px] sm:h-[380px] md:w-[460px] md:h-[460px] lg:w-[550px] lg:h-[550px] rounded-full border border-blush/15"
             />
 
             {/* Main Circle with Logo */}
             <motion.div
               animate={{ y: [-10, 10, -10] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full bg-background shadow-soft-lg flex items-center justify-center overflow-hidden"
+              className="relative w-44 h-44 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full bg-background shadow-soft-lg flex items-center justify-center overflow-hidden"
             >
               <img 
                 src={logo} 
                 alt="Event Krafters" 
-                className="w-full h-full object-contain p-4"
+                className="w-full h-full object-contain p-2 sm:p-4"
               />
             </motion.div>
 
@@ -114,17 +114,17 @@ const HeroSection = () => {
             <motion.div
               animate={{ y: [-20, 0, -20], x: [0, 10, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-10 right-10 w-16 h-16 rounded-full gradient-gold opacity-80 shadow-soft"
+              className="absolute top-5 sm:top-10 right-5 sm:right-10 w-10 h-10 sm:w-16 sm:h-16 rounded-full gradient-gold opacity-80 shadow-soft"
             />
             <motion.div
               animate={{ y: [0, -15, 0], x: [-5, 5, -5] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="absolute bottom-20 left-10 w-12 h-12 rounded-full bg-blush shadow-soft"
+              className="absolute bottom-12 sm:bottom-20 left-5 sm:left-10 w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-blush shadow-soft"
             />
             <motion.div
               animate={{ y: [-10, 10, -10] }}
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute top-1/2 -left-5 w-8 h-8 rounded-full bg-peach shadow-soft"
+              className="absolute top-1/2 -left-2 sm:-left-5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-peach shadow-soft"
             />
           </motion.div>
         </div>

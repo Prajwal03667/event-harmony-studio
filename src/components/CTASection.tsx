@@ -42,12 +42,12 @@ const CTASection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6"
+            className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 px-2"
           >
             Let's Craft Your{" "}
-            <span className="relative">
+            <span className="relative inline-block">
               Celebration
-              <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
+              <svg className="absolute -bottom-1 sm:-bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
                 <path d="M2 10C50 2 150 2 198 10" stroke="hsl(var(--gold))" strokeWidth="3" strokeLinecap="round" />
               </svg>
             </span>
@@ -82,15 +82,15 @@ const CTASection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-wrap justify-center gap-4 mt-10"
+            className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 mt-8 sm:mt-10"
           >
-            <span className="px-5 py-2 rounded-full bg-background/50 backdrop-blur-sm text-sm font-medium text-foreground">
-              📞 +91 98765 43210
-            </span>
-            <span className="px-5 py-2 rounded-full bg-background/50 backdrop-blur-sm text-sm font-medium text-foreground">
-              📧 hello@eventkrafters.in
-            </span>
-            <span className="px-5 py-2 rounded-full bg-background/50 backdrop-blur-sm text-sm font-medium text-foreground">
+            <a href="tel:+919356355950" className="px-4 sm:px-5 py-2 rounded-full bg-background/50 backdrop-blur-sm text-xs sm:text-sm font-medium text-foreground hover:bg-background/70 transition-colors">
+              📞 +91 93563 55950
+            </a>
+            <a href="mailto:prajwalsshelar143@gmail.com" className="px-4 sm:px-5 py-2 rounded-full bg-background/50 backdrop-blur-sm text-xs sm:text-sm font-medium text-foreground hover:bg-background/70 transition-colors">
+              📧 prajwalsshelar143@gmail.com
+            </a>
+            <span className="px-4 sm:px-5 py-2 rounded-full bg-background/50 backdrop-blur-sm text-xs sm:text-sm font-medium text-foreground">
               📍 Rahatni, Pune
             </span>
           </motion.div>
