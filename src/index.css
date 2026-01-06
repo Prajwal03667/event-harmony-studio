@@ -14,22 +14,22 @@
 @layer base {
   :root {
     --background: 30 50% 98%;
-    --foreground: 20 20% 20%;
+    --foreground: 20 30% 15%;
 
     --card: 30 40% 99%;
-    --card-foreground: 20 20% 20%;
+    --card-foreground: 20 30% 15%;
 
     --popover: 30 40% 99%;
-    --popover-foreground: 20 20% 20%;
+    --popover-foreground: 20 30% 15%;
 
     --primary: 15 70% 75%;
-    --primary-foreground: 20 20% 15%;
+    --primary-foreground: 20 30% 12%;
 
     --secondary: 340 50% 88%;
-    --secondary-foreground: 340 30% 25%;
+    --secondary-foreground: 340 40% 20%;
 
     --muted: 30 20% 94%;
-    --muted-foreground: 20 10% 45%;
+    --muted-foreground: 20 15% 40%;
 
     --accent: 38 70% 60%;
     --accent-foreground: 38 80% 15%;
@@ -155,8 +155,10 @@
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent;
-    background: linear-gradient(135deg, hsl(var(--peach-dark)) 0%, hsl(var(--gold)) 100%);
+    background: linear-gradient(135deg, hsl(15 55% 45%) 0%, hsl(38 70% 40%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .glow-peach {
