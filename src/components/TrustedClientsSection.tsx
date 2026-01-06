@@ -38,18 +38,24 @@ const TrustedClientsSection = () => {
         </motion.div>
 
         {/* Client Pills */}
-        <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 max-w-4xl mx-auto">
           {clientTypes.map((client, index) => (
             <motion.div
               key={client.label}
-              initial={{ opacity: 0, y: 20, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 20, scale: 0.9 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5, scale: 1.05 }}
-              className={`flex items-center gap-3 px-6 py-4 rounded-full border-2 ${client.color} backdrop-blur-sm shadow-soft cursor-pointer transition-all duration-300 hover:shadow-soft-lg`}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50, scale: 0.8 }}
+              animate={isInView ? { opacity: 1, x: 0, scale: 1 } : { opacity: 0, x: index % 2 === 0 ? -50 : 50, scale: 0.8 }}
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.1,
+                type: "spring",
+                stiffness: 120
+              }}
+              whileHover={{ y: -5, scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+              className={`flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 sm:py-4 rounded-full border-2 ${client.color} backdrop-blur-sm shadow-soft cursor-pointer transition-all duration-300 hover:shadow-soft-lg`}
             >
-              <client.icon className="w-5 h-5" />
-              <span className="font-medium text-foreground">{client.label}</span>
+              <client.icon className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="font-medium text-foreground text-sm sm:text-base">{client.label}</span>
             </motion.div>
           ))}
         </div>

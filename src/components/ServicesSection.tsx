@@ -50,10 +50,16 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-      whileHover={{ y: -10 }}
+      initial={{ opacity: 0, y: 80, scale: 0.9 }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 80, scale: 0.9 }}
+      transition={{ 
+        duration: 0.7, 
+        delay: index * 0.12, 
+        type: "spring",
+        stiffness: 100
+      }}
+      whileHover={{ y: -12, scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
       className="group cursor-pointer"
     >
       <div className="relative h-full bg-card rounded-2xl sm:rounded-3xl overflow-hidden shadow-soft hover:shadow-soft-lg transition-all duration-500 border border-border/50">
