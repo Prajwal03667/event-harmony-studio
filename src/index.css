@@ -13,49 +13,49 @@
 
 @layer base {
   :root {
-    --background: 30 50% 98%;
-    --foreground: 20 30% 15%;
+    --background: 40 33% 98%;
+    --foreground: 20 25% 12%;
 
-    --card: 30 40% 99%;
-    --card-foreground: 20 30% 15%;
+    --card: 40 40% 99%;
+    --card-foreground: 20 25% 12%;
 
-    --popover: 30 40% 99%;
-    --popover-foreground: 20 30% 15%;
+    --popover: 40 40% 99%;
+    --popover-foreground: 20 25% 12%;
 
-    --primary: 15 70% 75%;
-    --primary-foreground: 20 30% 12%;
+    --primary: 18 55% 68%;
+    --primary-foreground: 20 25% 10%;
 
-    --secondary: 340 50% 88%;
-    --secondary-foreground: 340 40% 20%;
+    --secondary: 350 45% 85%;
+    --secondary-foreground: 350 35% 18%;
 
-    --muted: 30 20% 94%;
-    --muted-foreground: 20 15% 40%;
+    --muted: 35 25% 93%;
+    --muted-foreground: 20 12% 45%;
 
-    --accent: 38 70% 60%;
-    --accent-foreground: 38 80% 15%;
+    --accent: 32 75% 50%;
+    --accent-foreground: 32 85% 12%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 30 30% 88%;
-    --input: 30 30% 88%;
-    --ring: 15 70% 75%;
+    --border: 35 25% 90%;
+    --input: 35 25% 90%;
+    --ring: 18 55% 68%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
-    /* Custom event krafters colors */
-    --peach: 15 70% 85%;
-    --peach-dark: 15 60% 70%;
-    --blush: 340 50% 90%;
-    --blush-dark: 340 45% 80%;
-    --cream: 40 50% 96%;
-    --gold: 38 70% 55%;
-    --gold-light: 40 60% 75%;
-    --champagne: 35 40% 92%;
+    /* Custom event krafters colors - refined palette */
+    --peach: 18 65% 88%;
+    --peach-dark: 18 50% 65%;
+    --blush: 350 45% 88%;
+    --blush-dark: 350 40% 75%;
+    --cream: 45 45% 97%;
+    --gold: 32 75% 48%;
+    --gold-light: 38 55% 70%;
+    --champagne: 40 35% 94%;
     
-    /* Glassmorphism */
-    --glass: 0 0% 100% / 0.7;
-    --glass-border: 0 0% 100% / 0.3;
+    /* Glassmorphism - refined */
+    --glass: 0 0% 100% / 0.85;
+    --glass-border: 0 0% 100% / 0.4;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -139,15 +139,15 @@
 
 @layer components {
   .glass-card {
-    @apply bg-glass backdrop-blur-xl border border-glass-border rounded-2xl shadow-soft;
+    @apply bg-glass backdrop-blur-2xl border border-glass-border rounded-xl shadow-elegant;
   }
 
   .gradient-peach {
-    background: linear-gradient(135deg, hsl(var(--peach)) 0%, hsl(var(--blush)) 100%);
+    background: linear-gradient(145deg, hsl(var(--peach)) 0%, hsl(var(--blush)) 100%);
   }
 
   .gradient-gold {
-    background: linear-gradient(135deg, hsl(var(--gold-light)) 0%, hsl(var(--gold)) 100%);
+    background: linear-gradient(145deg, hsl(var(--gold-light)) 0%, hsl(var(--gold)) 100%);
   }
 
   .gradient-cream {
@@ -155,52 +155,80 @@
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, hsl(15 55% 45%) 0%, hsl(38 70% 40%) 100%);
+    background: linear-gradient(145deg, hsl(32 60% 40%) 0%, hsl(18 50% 35%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .glow-peach {
-    box-shadow: 0 0 60px 20px hsl(var(--peach) / 0.4);
+    box-shadow: 0 0 80px 30px hsl(var(--peach) / 0.25);
   }
 
   .glow-gold {
-    box-shadow: 0 0 40px 10px hsl(var(--gold) / 0.3);
+    box-shadow: 0 0 60px 15px hsl(var(--gold) / 0.2);
   }
 
   .floating {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  .floating-slow {
     animation: float 8s ease-in-out infinite;
   }
 
+  .floating-slow {
+    animation: float 10s ease-in-out infinite;
+  }
+
   .pulse-soft {
-    animation: pulse-soft 3s ease-in-out infinite;
+    animation: pulse-soft 4s ease-in-out infinite;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-36;
+  }
+
+  .section-header {
+    @apply text-center max-w-4xl mx-auto mb-16 lg:mb-20;
+  }
+
+  .card-premium {
+    @apply bg-card rounded-2xl border border-border/40 shadow-elegant hover:shadow-elegant-lg transition-all duration-500;
   }
 }
 
 @layer utilities {
   .font-display {
     font-family: 'Playfair Display', serif;
+    letter-spacing: -0.02em;
   }
 
   .font-sans {
     font-family: 'DM Sans', sans-serif;
+    letter-spacing: -0.01em;
   }
 
   .shadow-soft {
-    box-shadow: 0 4px 30px hsl(20 20% 20% / 0.08);
+    box-shadow: 0 2px 20px hsl(20 15% 20% / 0.06);
   }
 
   .shadow-soft-lg {
-    box-shadow: 0 10px 50px hsl(20 20% 20% / 0.12);
+    box-shadow: 0 8px 40px hsl(20 15% 20% / 0.1);
+  }
+
+  .shadow-elegant {
+    box-shadow: 
+      0 1px 2px hsl(20 15% 20% / 0.04),
+      0 4px 12px hsl(20 15% 20% / 0.06),
+      0 16px 32px hsl(20 15% 20% / 0.04);
+  }
+
+  .shadow-elegant-lg {
+    box-shadow: 
+      0 2px 4px hsl(20 15% 20% / 0.04),
+      0 8px 24px hsl(20 15% 20% / 0.08),
+      0 24px 48px hsl(20 15% 20% / 0.06);
   }
 
   .shadow-glow {
-    box-shadow: 0 0 40px hsl(var(--peach) / 0.3);
+    box-shadow: 0 0 50px hsl(var(--gold) / 0.2);
   }
 }
 
