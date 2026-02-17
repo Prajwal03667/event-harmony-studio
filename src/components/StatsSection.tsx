@@ -84,7 +84,8 @@ const StatsSection = () => {
           className="text-center mb-16 lg:mb-20"
         >
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Our Journey in <span className="text-gradient">Numbers</span>
+            Corporate Event Management{" "}
+            <span className="text-gradient">Experts in Pune</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto">
             Delivering excellence in event decoration for over a decade

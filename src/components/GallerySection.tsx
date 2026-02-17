@@ -13,12 +13,12 @@ import pyroImg from "@/assets/cold-pyro.jpg";
 import themeImg from "@/assets/theme-installation.jpg";
 
 const galleryImages = [
-  { title: "Birthday Balloon Arch", category: "Birthday", image: balloonImg },
-  { title: "Canopy Setup", category: "Outdoor", image: canopyImg },
-  { title: "Pagoda Tent", category: "Wedding", image: pagodaImg },
-  { title: "Wedding Stage", category: "Wedding", image: stageImg },
-  { title: "Cold Pyro Effects", category: "Special Effects", image: pyroImg },
-  { title: "Theme Installation", category: "Corporate", image: themeImg },
+  { title: "Birthday Balloon Arch", category: "Birthday", image: balloonImg, alt: "Birthday balloon arch decoration by EventKrafters Pune" },
+  { title: "Canopy Setup", category: "Outdoor", image: canopyImg, alt: "Outdoor canopy tent event setup in Pune" },
+  { title: "Pagoda Tent", category: "Wedding", image: pagodaImg, alt: "Wedding pagoda tent decoration EventKrafters" },
+  { title: "Wedding Stage", category: "Wedding", image: stageImg, alt: "Wedding event stage setup in Pune by EventKrafters" },
+  { title: "Cold Pyro Effects", category: "Special Effects", image: pyroImg, alt: "Cold pyro effects for events in Pune" },
+  { title: "Theme Installation", category: "Corporate", image: themeImg, alt: "Corporate event theme installation EventKrafters Pune" },
 ];
 
 const GallerySection = () => {
@@ -40,7 +40,8 @@ const GallerySection = () => {
             Our Work
           </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Explore Our <span className="text-gradient">Gallery</span>
+            Professional Stage, Sound, and Lighting{" "}
+            <span className="text-gradient">Setup Services</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A glimpse into the magical moments we've helped create for our clients.
@@ -67,7 +68,7 @@ const GallerySection = () => {
               <div className={`w-full ${index === 0 || index === 5 ? "lg:h-full h-40 sm:h-52" : "h-40 sm:h-52 lg:h-60"}`}>
                 <img
                   src={image.image}
-                  alt={image.title}
+                  alt={image.alt}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>

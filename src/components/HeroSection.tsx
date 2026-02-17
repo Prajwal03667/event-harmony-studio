@@ -38,9 +38,9 @@ const HeroSection = () => {
               transition={{ delay: 0.4, duration: 1, ease: [0.22, 1, 0.36, 1] }}
               className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.1] mb-6 sm:mb-8"
             >
-              Elegant Event{" "}
-              <span className="text-gradient">Styling</span>{" "}
-              <span className="block mt-2">Crafted For You</span>
+              Event Management{" "}
+              <span className="text-gradient">Company in Pune</span>{" "}
+              <span className="block mt-2">for Weddings & Corporate Events</span>
             </motion.h1>
 
             <motion.p
@@ -49,8 +49,9 @@ const HeroSection = () => {
               transition={{ delay: 0.5, duration: 1, ease: [0.22, 1, 0.36, 1] }}
               className="text-base sm:text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0 mb-10 leading-relaxed"
             >
-              Transform your celebrations with stunning balloon décor, elegant tent setups, 
-              professional stages, and mesmerizing effects. Every moment deserves to be extraordinary.
+              EventKrafters is a professional event management company in Pune offering wedding planning, 
+              corporate event management, stunning balloon décor, elegant tent setups, and mesmerizing stage effects. 
+              Your trusted event planner in Pune for every celebration.
             </motion.p>
 
             <motion.div
@@ -122,7 +123,7 @@ const HeroSection = () => {
             >
               <img 
                 src={logo} 
-                alt="Event Krafters" 
+                alt="EventKrafters - Professional event management company in Pune" 
                 className="w-[85%] h-[85%] object-contain"
               />
             </motion.div>
