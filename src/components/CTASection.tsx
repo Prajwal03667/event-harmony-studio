@@ -57,8 +57,8 @@ const CTASection = () => {
             transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="text-lg sm:text-xl text-foreground/75 max-w-2xl mx-auto mb-12 leading-relaxed"
           >
-            From intimate gatherings to grand celebrations, we bring your vision to life 
-            with exquisite décor and flawless execution.
+            From intimate gatherings to grand celebrations, our professional event management services in India 
+            bring your vision to life with exquisite décor and flawless execution.
           </motion.p>
 
           <motion.div

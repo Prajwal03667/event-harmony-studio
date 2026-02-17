@@ -16,31 +16,37 @@ const services = [
     title: "Balloon Decoration",
     description: "Stunning balloon arches, garlands, and custom installations for every celebration.",
     image: balloonImg,
+    alt: "Wedding balloon decoration setup by EventKrafters Pune",
   },
   {
     title: "Canopy Tents",
     description: "Elegant outdoor coverage with premium canopy tent setups for any venue.",
     image: canopyImg,
+    alt: "Professional canopy tent setup for outdoor events in Pune",
   },
   {
     title: "Pagoda Tents",
     description: "Majestic pagoda structures that add grandeur to your special occasions.",
     image: pagodaImg,
+    alt: "Pagoda tent installation for wedding events by EventKrafters",
   },
   {
     title: "Stage & Framing",
     description: "Professional stage setups with beautiful framing and backdrop designs.",
     image: stageImg,
+    alt: "Corporate event stage setup by EventKrafters Pune",
   },
   {
     title: "Cold Pyro & SFX",
     description: "Mesmerizing cold pyro effects and special effects for magical moments.",
     image: pyroImg,
+    alt: "Cold pyro special effects for wedding events in Pune",
   },
   {
     title: "Theme Installations",
     description: "Custom themed décor installations tailored to your unique vision.",
     image: themeImg,
+    alt: "Professional event theme installation by EventKrafters",
   },
 ];
 
@@ -63,9 +69,9 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
       <div className="relative h-full bg-card rounded-2xl overflow-hidden shadow-elegant hover:shadow-elegant-lg transition-all duration-700 border border-border/30 hover:border-border/60">
         {/* Image */}
         <div className="relative h-48 sm:h-56 overflow-hidden">
-          <img
-            src={service.image}
-            alt={service.title}
+            <img
+              src={service.image}
+              alt={service.alt}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-foreground/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -118,8 +124,8 @@ const ServicesSection = () => {
             What We Offer
           </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-6 leading-tight">
-            Premium Event{" "}
-            <span className="text-gradient">Decoration</span>
+            Wedding Planning and Event Management{" "}
+            <span className="text-gradient">Services in Pune</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             From intimate celebrations to grand events, we craft beautiful moments 
