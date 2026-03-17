@@ -20,7 +20,7 @@ const services = [
 
 const socials = [
   { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Instagram, href: "https://www.instagram.com/event_krafter.s?igsh=MWQ0cmc3a2VtZGoyOQ==", label: "Instagram" },
   { icon: Youtube, href: "#", label: "YouTube" },
 ];
 
