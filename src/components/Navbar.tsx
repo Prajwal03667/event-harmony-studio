@@ -46,7 +46,9 @@ const Navbar = () => {
             <div className="relative">
               <img 
                 src={logo} 
-                alt="Event Krafters Logo" 
+                alt="Event Krafters Logo - Event planner in Pune" 
+                width={56}
+                height={56}
                 className="w-11 h-11 sm:w-14 sm:h-14 rounded-full object-cover shadow-soft border border-border/40 transition-shadow group-hover:shadow-elegant"
               />
             </div>

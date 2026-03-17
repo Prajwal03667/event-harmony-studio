@@ -57,7 +57,10 @@ const BrandTieupsSection = () => {
               <div className="aspect-square rounded-2xl bg-card border border-border/40 shadow-soft flex flex-col items-center justify-center p-6 hover:shadow-elegant hover:border-border/60 transition-all duration-500">
                 <img 
                   src={brand.logo} 
-                  alt={brand.name} 
+                  alt={`${brand.name} brand partner - Event Krafters Pune`}
+                  loading="lazy"
+                  width={80}
+                  height={80}
                   className="w-16 h-16 sm:w-20 sm:h-20 object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
                 />
                 <span className="text-sm font-medium text-muted-foreground text-center mt-4 group-hover:text-foreground transition-colors duration-300">
