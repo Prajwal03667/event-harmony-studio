@@ -123,7 +123,9 @@ const HeroSection = () => {
             >
               <img 
                 src={logo} 
-                alt="EventKrafters - Professional event management company in Pune" 
+                alt="Event Krafters - Best event planner in Pune for weddings, birthdays, and corporate events" 
+                width={384}
+                height={384}
                 className="w-[85%] h-[85%] object-contain"
               />
             </motion.div>

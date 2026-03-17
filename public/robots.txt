@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /assets/
 
 Sitemap: https://eventkrafters.netlify.app/sitemap.xml
+
+# Event Krafters - Best Event Planner in Pune
+# Wedding, Birthday & Corporate Event Planning Services
+# Serving Pune, Pimpri Chinchwad, Rahatni & PCMC

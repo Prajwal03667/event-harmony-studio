@@ -155,7 +155,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-background/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-background/40 text-sm text-center md:text-left">
-            © 2024 Event Krafters – Premium Decor Studio. All rights reserved.
+            © 2025 Event Krafters – Premium Decor Studio. All rights reserved.
           </p>
           <div className="flex gap-8">
             <a href="#" className="text-background/40 hover:text-background/70 text-sm transition-colors">
