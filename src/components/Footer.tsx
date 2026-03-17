@@ -44,7 +44,10 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-6">
               <img 
                 src={logo} 
-                alt="Event Krafters Logo" 
+                alt="Event Krafters Logo - Premium event planner Pune" 
+                width={56}
+                height={56}
+                loading="lazy"
                 className="w-14 h-14 rounded-full object-cover bg-background shadow-soft"
               />
               <div>
