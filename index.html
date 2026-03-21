@@ -50,137 +50,57 @@
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="preconnect" href="https://analytics.ahrefs.com" />
 
-    <!-- Organization Structured Data -->
+    <!-- LocalBusiness Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": "LocalBusiness",
       "name": "Event Krafters",
-      "alternateName": "EventKrafters",
-      "url": "https://eventkrafters.netlify.app",
-      "logo": "https://eventkrafters.netlify.app/logo.png",
-      "sameAs": [
-        "https://www.instagram.com/event_krafter.s"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+919356355950",
-        "contactType": "customer service",
-        "areaServed": "IN",
-        "availableLanguage": ["English", "Hindi", "Marathi"]
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Rahatni",
-        "addressLocality": "Pune",
-        "addressRegion": "Maharashtra",
-        "postalCode": "411017",
-        "addressCountry": "IN"
-      }
-    }
-    </script>
-
-    <!-- Local Business Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "EventPlanner",
-      "name": "Event Krafters",
-      "alternateName": "EventKrafters - Rahatni Decor Studio",
-      "image": "https://eventkrafters.netlify.app/logo.png",
+      "description": "Event Krafters is a professional event management company in Pimpri-Chinchwad, Pune offering wedding planning, birthday party decoration, corporate event management, balloon decoration, tent setup, stage framing and cold pyro effects.",
       "url": "https://eventkrafters.netlify.app",
       "telephone": "+919356355950",
       "email": "prajwalsshelar143@gmail.com",
-      "description": "Event Krafters is the best event planner in Pune offering wedding planning, birthday party decoration, corporate event management, balloon decoration, tent setup, stage framing, and cold pyro effects in Pune, Pimpri Chinchwad, and Rahatni.",
+      "image": "https://eventkrafters.netlify.app/og-image.jpg",
+      "priceRange": "₹₹",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Rahatni",
         "addressLocality": "Pimpri-Chinchwad",
-        "addressRegion": "Maharashtra",
+        "addressRegion": "MH",
         "postalCode": "411017",
         "addressCountry": "IN"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 18.5913,
-        "longitude": 73.8132
+        "latitude": 18.6279,
+        "longitude": 73.8009
       },
-      "areaServed": [
+      "openingHoursSpecification": [
         {
-          "@type": "City",
-          "name": "Pune"
-        },
-        {
-          "@type": "City",
-          "name": "Pimpri-Chinchwad"
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "09:00",
+          "closes": "20:00"
         }
+      ],
+      "areaServed": [
+        {"@type": "City", "name": "Pimpri-Chinchwad"},
+        {"@type": "City", "name": "Pune"}
+      ],
+      "sameAs": [
+        "https://www.instagram.com/event_krafter.s"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Event Planning Services",
+        "name": "Event Services",
         "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Wedding Planning",
-              "description": "Complete wedding event planning and decoration services in Pune"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Birthday Party Planning",
-              "description": "Birthday party decoration and event planning in Pimpri Chinchwad"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Corporate Event Management",
-              "description": "Professional corporate event planning and management in Pune"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Balloon Decoration",
-              "description": "Custom balloon arches, garlands and installations for events"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Tent Setup (Canopy & Pagoda)",
-              "description": "Premium canopy and pagoda tent setups for outdoor events"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Cold Pyro & Special Effects",
-              "description": "Mesmerizing cold pyro and SFX for weddings and events"
-            }
-          }
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Wedding Planning in Pune"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Birthday Party Decoration"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Corporate Event Management"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Balloon Decoration"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Canopy and Pagoda Tent Setup"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cold Pyro Effects"}}
         ]
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "500",
-        "bestRating": "5"
-      },
-      "priceRange": "$$",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        "opens": "09:00",
-        "closes": "21:00"
       }
     }
     </script>
