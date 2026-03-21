@@ -1,12 +1,19 @@
 import { motion } from "framer-motion";
 import { Facebook, Instagram, Youtube, Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const quickLinks = [
-  { name: "Services", href: "#services" },
-  { name: "Gallery", href: "#gallery" },
-  { name: "About Us", href: "#about" },
-  { name: "Contact", href: "#contact" },
+  { name: "Services", href: "#services", isRoute: false },
+  { name: "Gallery", href: "#gallery", isRoute: false },
+  { name: "About Us", href: "#about", isRoute: false },
+  { name: "Contact", href: "#contact", isRoute: false },
+];
+
+const servicePages = [
+  { name: "Wedding Planner Pune", href: "/wedding-planner-pune" },
+  { name: "Birthday Party Planner", href: "/birthday-party-planner-pune" },
+  { name: "Corporate Events", href: "/corporate-event-management-pune" },
 ];
 
 const services = [
