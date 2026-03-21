@@ -1,12 +1,19 @@
 import { motion } from "framer-motion";
 import { Facebook, Instagram, Youtube, Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const quickLinks = [
-  { name: "Services", href: "#services" },
-  { name: "Gallery", href: "#gallery" },
-  { name: "About Us", href: "#about" },
-  { name: "Contact", href: "#contact" },
+  { name: "Services", href: "#services", isRoute: false },
+  { name: "Gallery", href: "#gallery", isRoute: false },
+  { name: "About Us", href: "#about", isRoute: false },
+  { name: "Contact", href: "#contact", isRoute: false },
+];
+
+const servicePages = [
+  { name: "Wedding Planner Pune", href: "/wedding-planner-pune" },
+  { name: "Birthday Party Planner", href: "/birthday-party-planner-pune" },
+  { name: "Corporate Events", href: "/corporate-event-management-pune" },
 ];
 
 const services = [
@@ -98,7 +105,7 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Services */}
+          {/* Services Pages */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -112,6 +119,18 @@ const Footer = () => {
                   <span className="text-background/60 text-sm">{service}</span>
                 </li>
               ))}
+              <li className="pt-2 border-t border-background/10 mt-3">
+                {servicePages.map((page) => (
+                  <Link
+                    key={page.name}
+                    to={page.href}
+                    className="group inline-flex items-center gap-1.5 text-background/60 hover:text-background transition-colors duration-300 text-sm mb-2 w-full"
+                  >
+                    {page.name}
+                    <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                  </Link>
+                ))}
+              </li>
             </ul>
           </motion.div>
 

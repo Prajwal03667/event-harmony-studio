@@ -39,8 +39,8 @@ const HeroSection = () => {
               className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.1] mb-6 sm:mb-8"
             >
               Event Management{" "}
-              <span className="text-gradient">Company in Pune</span>{" "}
-              <span className="block mt-2">for Weddings & Corporate Events</span>
+              <span className="text-gradient">Company in Pimpri-Chinchwad,</span>{" "}
+              <span className="block mt-2">Pune</span>
             </motion.h1>
 
             <motion.p
