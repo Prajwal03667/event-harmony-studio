@@ -105,7 +105,7 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Services */}
+          {/* Services Pages */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -119,6 +119,18 @@ const Footer = () => {
                   <span className="text-background/60 text-sm">{service}</span>
                 </li>
               ))}
+              <li className="pt-2 border-t border-background/10 mt-3">
+                {servicePages.map((page) => (
+                  <Link
+                    key={page.name}
+                    to={page.href}
+                    className="group inline-flex items-center gap-1.5 text-background/60 hover:text-background transition-colors duration-300 text-sm mb-2 w-full"
+                  >
+                    {page.name}
+                    <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                  </Link>
+                ))}
+              </li>
             </ul>
           </motion.div>
 
