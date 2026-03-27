@@ -4,6 +4,7 @@ const BirthdayPartyPlannerPune = () => (
   <ServicePageLayout
     metaTitle="Birthday Party Planner in Pune & Pimpri-Chinchwad | Event Krafters"
     metaDescription="Best birthday party decorators in Pune. Balloon decoration, theme setups, surprise parties & complete birthday management. Call +91 93563 55950."
+    canonicalPath="/birthday-party-planner-pune"
     title="Birthday Party Planner in Pimpri-Chinchwad, Pune"
     intro="Make every birthday unforgettable with Event Krafters. We create magical birthday celebrations for all ages across Pimpri-Chinchwad and Pune."
     services={[
