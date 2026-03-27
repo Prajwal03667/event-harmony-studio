@@ -10,6 +10,7 @@ interface ServicePageLayoutProps {
   title: string;
   metaTitle: string;
   metaDescription: string;
+  canonicalPath: string;
   intro: string;
   services: string[];
   whyChooseUs?: { title: string; text: string }[];
@@ -21,6 +22,7 @@ const ServicePageLayout = ({
   title,
   metaTitle,
   metaDescription,
+  canonicalPath,
   intro,
   services,
   whyChooseUs,
@@ -29,10 +31,63 @@ const ServicePageLayout = ({
 }: ServicePageLayoutProps) => {
   useEffect(() => {
     document.title = metaTitle;
-    const descMeta = document.querySelector('meta[name="description"]');
-    if (descMeta) descMeta.setAttribute("content", metaDescription);
+
+    // Meta description
+    let descMeta = document.querySelector('meta[name="description"]');
+    if (descMeta) {
+      descMeta.setAttribute("content", metaDescription);
+    } else {
+      descMeta = document.createElement("meta");
+      descMeta.setAttribute("name", "description");
+      descMeta.setAttribute("content", metaDescription);
+      document.head.appendChild(descMeta);
+    }
+
+    // Canonical URL
+    const canonicalUrl = `https://eventkrafters.netlify.app${canonicalPath}`;
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+    if (canonical) {
+      canonical.href = canonicalUrl;
+    } else {
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
+      canonical.href = canonicalUrl;
+      document.head.appendChild(canonical);
+    }
+
+    // OG tags
+    const ogTags: Record<string, string> = {
+      "og:title": metaTitle,
+      "og:description": metaDescription,
+      "og:url": canonicalUrl,
+      "og:type": "website",
+      "og:image": "https://eventkrafters.netlify.app/og-image.jpg",
+      "og:site_name": "Event Krafters",
+    };
+
+    Object.entries(ogTags).forEach(([property, content]) => {
+      let tag = document.querySelector(`meta[property="${property}"]`);
+      if (tag) {
+        tag.setAttribute("content", content);
+      } else {
+        tag = document.createElement("meta");
+        tag.setAttribute("property", property);
+        tag.setAttribute("content", content);
+        document.head.appendChild(tag);
+      }
+    });
+
     window.scrollTo(0, 0);
-  }, [metaTitle, metaDescription]);
+
+    // Cleanup: restore homepage meta on unmount
+    return () => {
+      document.title = "Event Krafters | Event Planner in Pimpri-Chinchwad, Pune | Weddings & Birthdays";
+      const desc = document.querySelector('meta[name="description"]');
+      if (desc) desc.setAttribute("content", "Professional event management company in Pimpri-Chinchwad, Pune. Weddings, birthday parties, corporate events, balloon decoration & cold pyro. Call +91 93563 55950 for a free quote!");
+      const canon = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+      if (canon) canon.href = "https://eventkrafters.netlify.app/";
+    };
+  }, [metaTitle, metaDescription, canonicalPath]);
 
   return (
     <main className="min-h-screen overflow-x-hidden">

@@ -4,6 +4,7 @@ const WeddingPlannerPune = () => (
   <ServicePageLayout
     metaTitle="Wedding Planner in Pune & Pimpri-Chinchwad | Event Krafters"
     metaDescription="Top wedding planners in Pune & Pimpri-Chinchwad. Complete wedding decoration, stage setup, cold pyro & theme installations. Call +91 93563 55950."
+    canonicalPath="/wedding-planner-pune"
     title="Wedding Planner in Pimpri-Chinchwad, Pune"
     intro="Event Krafters is Pimpri-Chinchwad's most trusted wedding planning company. From intimate ceremonies to grand receptions, we handle every detail of your special day."
     services={[
