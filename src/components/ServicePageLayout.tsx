@@ -87,7 +87,7 @@ const ServicePageLayout = ({
     // FAQ structured data (AEO — helps AI search engines extract Q&A content)
     const faqSchemaId = "service-faq-schema";
     if (faqs && faqs.length > 0) {
-      let schema = document.getElementById(faqSchemaId);
+      let schema = document.getElementById(faqSchemaId) as HTMLScriptElement | null;
       if (!schema) {
         schema = document.createElement("script");
         schema.id = faqSchemaId;
