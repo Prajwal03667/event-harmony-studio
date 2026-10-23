@@ -6,6 +6,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
 interface ServicePageLayoutProps {
   title: string;
   metaTitle: string;
@@ -14,6 +19,7 @@ interface ServicePageLayoutProps {
   intro: string;
   services: string[];
   whyChooseUs?: { title: string; text: string }[];
+  faqs?: FAQ[];
   ctaText: string;
   ctaLink: string;
 }
@@ -26,6 +32,7 @@ const ServicePageLayout = ({
   intro,
   services,
   whyChooseUs,
+  faqs,
   ctaText,
   ctaLink,
 }: ServicePageLayoutProps) => {
@@ -43,7 +50,7 @@ const ServicePageLayout = ({
       document.head.appendChild(descMeta);
     }
 
-    // Canonical URL
+    // Self-referencing canonical URL (each page points to its own URL)
     const canonicalUrl = `https://eventkrafters.netlify.app${canonicalPath}`;
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
     if (canonical) {
@@ -77,17 +84,40 @@ const ServicePageLayout = ({
       }
     });
 
+    // FAQ structured data (AEO — helps AI search engines extract Q&A content)
+    const faqSchemaId = "service-faq-schema";
+    if (faqs && faqs.length > 0) {
+      let schema = document.getElementById(faqSchemaId) as HTMLScriptElement | null;
+      if (!schema) {
+        schema = document.createElement("script");
+        schema.id = faqSchemaId;
+        schema.type = "application/ld+json";
+        document.head.appendChild(schema);
+      }
+      schema.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: { "@type": "Answer", text: faq.answer },
+        })),
+      });
+    }
+
     window.scrollTo(0, 0);
 
     // Cleanup: restore homepage meta on unmount
     return () => {
-      document.title = "Event Krafters | Event Planner in Pimpri-Chinchwad, Pune | Weddings & Birthdays";
+      document.title = "Event Krafters | Professional Event Planner in Pune | Weddings, Birthdays & Corporate";
       const desc = document.querySelector('meta[name="description"]');
-      if (desc) desc.setAttribute("content", "Professional event management company in Pimpri-Chinchwad, Pune. Weddings, birthday parties, corporate events, balloon decoration & cold pyro. Call +91 93563 55950 for a free quote!");
+      if (desc) desc.setAttribute("content", "Professional event management in Pimpri-Chinchwad, Pune. From luxury weddings to corporate events. Call +91 93563 55950 for a free quote!");
       const canon = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
       if (canon) canon.href = "https://eventkrafters.netlify.app/";
+      const faqSchema = document.getElementById(faqSchemaId);
+      if (faqSchema) faqSchema.remove();
     };
-  }, [metaTitle, metaDescription, canonicalPath]);
+  }, [metaTitle, metaDescription, canonicalPath, faqs]);
 
   return (
     <main className="min-h-screen overflow-x-hidden">
@@ -171,6 +201,46 @@ const ServicePageLayout = ({
                     </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed">
                       {item.text}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
+      {faqs && faqs.length > 0 && (
+        <section className="section-padding bg-muted/30" id="faq">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="max-w-3xl mx-auto"
+            >
+              <h2 className="font-display text-2xl sm:text-3xl font-bold text-foreground mb-4 text-center">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto text-center mb-10">
+                Common questions about our services in Pune and Pimpri-Chinchwad.
+              </p>
+              <div className="space-y-4">
+                {faqs.map((faq, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: i * 0.08 }}
+                    viewport={{ once: true }}
+                    className="card-premium p-6"
+                  >
+                    <h3 className="font-display text-base sm:text-lg font-semibold text-foreground mb-2">
+                      {faq.question}
+                    </h3>
+                    <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+                      {faq.answer}
                     </p>
                   </motion.div>
                 ))}
